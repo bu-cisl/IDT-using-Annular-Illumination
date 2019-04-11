@@ -1,41 +1,31 @@
-# Illumination-Coding-Meets-Uncertainty-Learning
-Python (Keras) implementation of paper: **Illumination coding meets uncertainty learning: toward reliable AI-augmented phase imaging**. We provide model, pre-trained weight, test data and a quick demo.
+# High-speed in vitro intensity diffraction tomography
+MATLAB implementation of paper: **High-speed in vitro intensity diffraction tomography**. We provide test data and a quick demo.
 
 
 ### Citation
 If you find this project useful in your research, please consider citing our paper:
 
-[**Yujia Xue, Shiyi Cheng, Yunzhe Li, and Lei Tian, "Illumination coding meets uncertainty learning: toward reliable AI-augmented phase imaging", ariXv preprint ](https://arxiv.org/abs/1901.02038)
+[**Jiaji Li, Alex Matlock, Yunzhe Li, Qian Chen, Chao Zuo and Lei Tian, "High-speed in vitro intensity diffraction tomography", ariXv preprint ]
 
 
 ### Abstract
-We develop a new Bayesian convolutional neural network (BNN) based technique for achieving large space-bandwidth product phase imaging that is both scalable and reliable.The scalability of our technique is enabled by a novel coded illumination scheme designed by the physical principles of asymmetric illumination-based phase contrast and synthetic aperture imaging. The system takes highly multiplexed intensity measurements to encode phase and high resolution information across a wide field-of-view (FOV).The inversion requires solving a highly ill-posed phase retrieval problem, which we show can be overcome by a deep learning (DL) algorithm. The reliability of our technique is quantitatively assessed by a novel uncertainty learning framework. Differing from existing DL-based reconstruction algorithms whose prediction errors can only be  discovered  in hindsight, our BNN framework allows uncertainty quantification of the DL predictions. Specifically, we show that the BNN predicted uncertainty maps can be used as  surrogates to the true error, which is typically unknown in many real-world applications. Furthermore, we complement the BNN with a statistical data analysis procedure that relate the network outputs to credibility quantification metrics.We apply our technique to both static and dynamic biological samples, and show that the illumination scheme allows achieving 5$\times$ resolution enhancement across a 4$\times$ FOV using only five multiplexed measurements.In addition, we show that the uncertainty quantification procedure allows evaluating the effects of several common experimental imperfections, including noise, model errors, incomplete training data, and out-of-distribution testing data. Finally, we illustrate the utility of the predicted uncertainty maps as a possible way to identify spatially and temporally rare biological phenomena.
-
-
+We demonstrate a label-free, scan-free intensity diffraction tomography technique utilizing annular illumination (aIDT) to rapidly characterize large-volume 3D refractive index distributions \emph{in vitro}.
+By optimally matching the illumination geometry to the microscope pupil, our technique reduces the data requirement by 60$\times$ to achieve high-speed 10 Hz volume rates.
+Using 8 intensity images, we recover \mbox{$\sim350\times100\times20\mu$m$^3$} volumes with near diffraction-limited lateral resolution of 487 nm and axial resolution of 3.4 $\mu$m.
+Our technique's large volume rate and high resolution enables 3D quantitative phase imaging of complex living biological samples across multiple length scales.
+We demonstrate aIDT's capabilities on unicellular diatom microalgae, epithelial buccal cell clusters with native bacteria, and live \emph{Caenorhabditis elegans} (\emph{C. elegans}) specimens.
+Within these samples, we recover macroscale cellular structures, subcellular organelles, and dynamic micro-organism tissues with minimal motion artifacts.
+Quantifying such features has significant utility in oncology, immunology, and cellular pathophysiology, where these morphological features are evaluated for changes in the presence of disease, parasites, and new drug treatments.
+aIDT shows promise as a powerful high-speed, label-free microscopy technique for these applications where natural imaging is required to evaluate environmental effects on a sample in real-time.
 
 
 ### Requirements
-python 3.6
-
-keras 2.1.2
-
-tensorflow 1.4.0
-
-numpy 1.14.3
-
-h5py 2.7.1
-
-matplotlib 2.1.2
+MATLAB R2018a
 
 
-### AI-augmented Phase Imaging and Uncertainty Learning Framework
+### Illustration of our aIDT imaging system
 <p align="center">
- <img src="/figs/overview.png">
-</p>
-
-### Network Structure
-<p align="center">
- <img src="/figs/network.png">
+ <img src="/figs/Imaging system.png">
 </p>
 
 
@@ -51,20 +41,16 @@ Raw datas are available on Google drive at https://googledirve.com/
 3 Frame Elegans data contain raw captured images
 
 ### Results
-## On SEEN cell type
+## Single cell RI tomography of unstained human cheek cell clusters
 <p align="center">
- <img src="/figs/seen_cell_type.png">
+ <img src="/figs/Cheek cell.png">
 </p>
 
 ## On UNSEEN cell type
 <p align="center">
- <img src="/figs/unseen_cell_type.png">
+ <img src="/figs/C. elegans.png">
 </p>
 
-## Uncertainty learning framework identifies spatially and temporally rare biological phenomena.
-<p align="center">
- <img src="/figs/video.png">
-</p>
 
 
 ## License

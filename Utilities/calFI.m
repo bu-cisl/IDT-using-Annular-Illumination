@@ -13,13 +13,7 @@ avgFI2=max(avgFI,3.*mT); %Put a floor that will get rid of noise outside the 2NA
 %(That is, where avgFI<3mT, make it be 3mT)
 
 FIdiv=FI./repmat(avgFI2,[1 1 size(FI,3)]); %Divide out the average value
-FIdivG=imgaussfilt(abs(FIdiv),3); %Gaussian filter it, sigma = 2
+FIdivG=imgaussfilt(abs(FIdiv),sigmaG); %Gaussian filter it, sigma = 2
 
+end
 
-% figure
-% for i=1:120
-%     imshow(FIdivG(:,:,i),[]);
-%     pause(0.1);
-% end
-
-    
