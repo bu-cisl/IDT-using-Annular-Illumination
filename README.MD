@@ -10,7 +10,7 @@ If you find this project useful in your research, please consider citing our pap
 ### Abstract
 We demonstrate a label-free, scan-free intensity diffraction tomography technique utilizing annular illumination (aIDT) to rapidly characterize large-volume 3D refractive index distributions *in vitro*.
 By optimally matching the illumination geometry to the microscope pupil, our technique reduces the data requirement by 60X to achieve high-speed 10 Hz volume rates.
-Using 8 intensity images, we recover ~ 350mu X 100 mu X 20 mu volumes with near diffraction-limited lateral resolution of 487 nm and axial resolution of 3.4 um.
+Using 8 intensity images, we recover ~ 350um X 100um X 20um volumes with near diffraction-limited lateral resolution of 487 nm and axial resolution of 3.4 um.
 Our technique's large volume rate and high resolution enables 3D quantitative phase imaging of complex living biological samples across multiple length scales.
 We demonstrate aIDT's capabilities on unicellular diatom microalgae, epithelial buccal cell clusters with native bacteria, and live *Caenorhabditis elegans* (*C. elegans*) specimens.
 Within these samples, we recover macroscale cellular structures, subcellular organelles, and dynamic micro-organism tissues with minimal motion artifacts.
