@@ -1,4 +1,4 @@
-# High-speed in vitro intensity diffraction tomography
+# High-speed *in vitro* intensity diffraction tomography
 MATLAB implementation of paper: **High-speed in vitro intensity diffraction tomography**. We provide test data and a quick demo.
 
 
