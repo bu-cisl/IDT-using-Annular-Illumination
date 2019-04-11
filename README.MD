@@ -1,16 +1,16 @@
 # High-speed *in vitro* intensity diffraction tomography
-MATLAB implementation of paper: **High-speed in vitro intensity diffraction tomography**. We provide test data and a quick demo.
+MATLAB implementation of paper: **High-speed *in vitro* intensity diffraction tomography**. We provide test data and a quick demo.
 
 
 ### Citation
 If you find this project useful in your research, please consider citing our paper:
 
-[**Jiaji Li, Alex Matlock, Yunzhe Li, Qian Chen, Chao Zuo and Lei Tian, "High-speed in vitro intensity diffraction tomography", ariXv preprint ]
+[**Jiaji Li, Alex Matlock, Yunzhe Li, Qian Chen, Chao Zuo and Lei Tian, "High-speed *in vitro* intensity diffraction tomography", ariXv preprint]
 
 
 ### Abstract
-We demonstrate a label-free, scan-free intensity diffraction tomography technique utilizing annular illumination (aIDT) to rapidly characterize large-volume 3D refractive index distributions \emph{in vitro}.
-By optimally matching the illumination geometry to the microscope pupil, our technique reduces the data requirement by 60$\times$ to achieve high-speed 10 Hz volume rates.
+We demonstrate a label-free, scan-free intensity diffraction tomography technique utilizing annular illumination (aIDT) to rapidly characterize large-volume 3D refractive index distributions *in vitro*.
+By optimally matching the illumination geometry to the microscope pupil, our technique reduces the data requirement by 60\times to achieve high-speed 10 Hz volume rates.
 Using 8 intensity images, we recover \mbox{$\sim350\times100\times20\mu$m$^3$} volumes with near diffraction-limited lateral resolution of 487 nm and axial resolution of 3.4 $\mu$m.
 Our technique's large volume rate and high resolution enables 3D quantitative phase imaging of complex living biological samples across multiple length scales.
 We demonstrate aIDT's capabilities on unicellular diatom microalgae, epithelial buccal cell clusters with native bacteria, and live \emph{Caenorhabditis elegans} (\emph{C. elegans}) specimens.
