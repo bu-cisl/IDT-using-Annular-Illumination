@@ -35,7 +35,7 @@ Functions in [Utilities](Utilities) folder are from [Waller-Lab](https://github.
 Raw datas are available on Google drive at https://googledirve.com/  
 
 
-### Illustration of our aIDT imaging system
+### Illustration of aIDT imaging system
 <p align="center">
  <img src="/figs/Imaging system.png">
 </p>
@@ -46,7 +46,7 @@ Raw datas are available on Google drive at https://googledirve.com/
  <img src="/figs/Cheek cell.png" width = "450">
 </p>
 
-#### Time-lapse in vitro tomographic imaging of C. elegans.
+#### Time-lapse in vitro tomographic imaging of *C. elegans*
 <p align="center">
  <img src="/figs/C. elegans.png">
 </p>
