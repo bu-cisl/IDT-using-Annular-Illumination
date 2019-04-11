@@ -24,7 +24,7 @@ This code was developed using MATLAB R2018a. Please be advised that this code ma
 ### How to run the demo
 1. Download this Repository to your computer.
 2. Download the raw data from our google drive https://googledirve.com/  
-3. Make sure the data and code are in the same folder path and run a "Main_AI_IDT" script. The following script versions are available for each demo:
+3. Make sure the data and code are in the same folder path and run a "Main_AI_IDT" script. The following script versions are available for each demo:  
 -[Main_AI_IDT_Diatom_I.m](Main_AI_IDT_Diatom_I.m) for Diatom_I result  
 -[Main_AI_IDT_Diatom_II.m](Main_AI_IDT_Diatom_II.m) for Diatom_II result  
 -[Main_AI_IDT_Cheek.m](Main_AI_IDT_Cheek.m) for Cheek cell culster result  
