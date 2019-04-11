@@ -13,7 +13,7 @@ k=2*pi/lambda; % Wave number
 NA=0.65;
 Mag=40;
 Pixelsize=6.5/Mag;
-n_Medium=1.45;
+n_Medium=1.47;
 
 Length_MN=24;% the number of LEDs
 Bright_Radius=29.7;% the Radius of LED ring
