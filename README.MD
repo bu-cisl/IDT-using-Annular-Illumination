@@ -43,7 +43,7 @@ We have implemented the functions in [Utilities](Utilities) from [Professor Laur
  <img src="/figs/Cheek cell.png" width = "450">
 </p>
 
-#### Time-lapse in vitro tomographic imaging of *C. elegans*
+#### Time-lapse *in vitro* tomographic imaging of *C. elegans*
 <p align="center">
  <img src="/figs/C. elegans.png">
 </p>
