@@ -1,9 +1,9 @@
-# High-speed *in vitro* intensity diffraction tomography
-MATLAB implementation of paper: **High-speed *in vitro* intensity diffraction tomography**. We provide test data and several quick demo.
+# High-speed *in vitro* intensity diffraction tomography using Annular Illumination (aIDT)
+MATLAB implementation of paper: **High-speed *in vitro* intensity diffraction tomography**. This github provides the codes, links to test data, and several quick demos illustrating this technique.
 
 
 ### Citation
-If you find this project useful in your research, please consider citing our paper:  
+If you use this project in your own research, please cite our corresponding paper: 
 [Jiaji Li, Alex Matlock, Yunzhe Li, Qian Chen, Chao Zuo and Lei Tian, "High-speed *in vitro* intensity diffraction tomography", ariXv preprint](https://arxiv.org)
 
 
@@ -19,21 +19,18 @@ aIDT shows promise as a powerful high-speed, label-free microscopy technique for
 
 
 ### Requirements
-MATLAB R2018a
-
+This code was developed using MATLAB R2018a. Please be advised that this code may not work with other editions of MATLAB.
 
 ### How to run the demo
-Make sure the data and code at same path and run Main_AI_IDT
+1. Download this Repository to your computer.
+2. Download the raw data from our google drive https://googledirve.com/  
+3. Make sure the data and code are in the same folder path and run a "Main_AI_IDT" script. The following script versions are available for each demo:
+-[Main_AI_IDT_Diatom_I.m](Main_AI_IDT_Diatom_I.m) for Diatom_I result  
+-[Main_AI_IDT_Diatom_II.m](Main_AI_IDT_Diatom_II.m) for Diatom_II result  
+-[Main_AI_IDT_Cheek.m](Main_AI_IDT_Cheek.m) for Cheek cell culster result  
+-[Main_AI_IDT_Elegans.m](Main_AI_IDT_Elegans.m) for cropped *C. elegans* result  
 
-[Main_AI_IDT_Diatom_I.m](Main_AI_IDT_Diatom_I.m) for Diatom_I result  
-[Main_AI_IDT_Diatom_II.m](Main_AI_IDT_Diatom_II.m) for Diatom_II result  
-[Main_AI_IDT_Cheek.m](Main_AI_IDT_Cheek.m) for Cheek cell culster result  
-[Main_AI_IDT_Elegans.m](Main_AI_IDT_Elegans.m) for cropped *C. elegans* result  
-Functions in [Utilities](Utilities) folder are from [Waller-Lab](https://github.com/Waller-Lab/Angle_SelfCalibration)  
-
-
-Raw datas are available on Google drive at https://googledirve.com/  
-
+We have implemented the functions in [Utilities](Utilities) from [Professor Laura Waller's Lab](https://github.com/Waller-Lab/Angle_SelfCalibration)  
 
 ### Illustration of aIDT imaging system
 <p align="center">
