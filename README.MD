@@ -4,7 +4,7 @@ MATLAB implementation of paper: **High-speed *in vitro* intensity diffraction to
 
 ### Citation
 If you use this project in your own research, please cite our corresponding paper: 
-[Jiaji Li, Alex Matlock, Yunzhe Li, Qian Chen, Chao Zuo and Lei Tian, "High-speed *in vitro* intensity diffraction tomography", ariXv preprint](https://arxiv.org)
+[Jiaji Li, Alex Matlock, Yunzhe Li, Qian Chen, Chao Zuo and Lei Tian, "High-speed *in vitro* intensity diffraction tomography", ariXv preprint](https://arxiv.org/abs/1904.06004)
 
 
 ### Abstract
