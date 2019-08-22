@@ -31,24 +31,48 @@ ATF_4D=single(zeros(Nx,Ny,length(Depth_Set),Length_MN));
 PTF_3D=single(zeros(Nx,Ny,length(Depth_Set)));
 ATF_3D=single(zeros(Nx,Ny,length(Depth_Set)));
 
+%%
 
-source=zeros(Nx,Ny);
+uu=fx2D;
+vv=fy2D;
+k_Wavenum=k;
+k_Medium=k_Wavenum*n_Medium;
+
 figure
 for i=1:Length_MN
     pic_pos=i
-     
-    source(Ini_PixelShiftx(pic_pos)+Nx/2+1,Ini_PixelShifty(pic_pos)+Ny/2+1)=1;
+
+    v_s=Ini_NAx(pic_pos);
+    u_s=Ini_NAy(pic_pos);
+    
+    G = real(1./(k_Medium*sqrt(1-lambda^2.*((uu-u_s).^2+(vv-v_s).^2))));
+    Gf = real(1./(k_Medium*sqrt(1-lambda^2.*((uu+u_s).^2+(vv+v_s).^2))));
+    
+    Pupil = circshift(Aperture_fun,[Ini_PixelShiftx(pic_pos),Ini_PixelShifty(pic_pos)]);
+    Pupilf = circshift(Aperture_fun,-[Ini_PixelShiftx(pic_pos),Ini_PixelShifty(pic_pos)]);
+    
+    uv_vector1=real(sqrt(1-lambda^2.*((uu-u_s).^2+(vv-v_s).^2)));
+    uv_vector2=real(sqrt(1-lambda^2.*((uu+u_s).^2+(vv+v_s).^2)));
+    uv_s=sqrt(1-lambda^2.*(u_s^2+v_s^2));
+    
     for j=1:length(Depth_Set)
-        deltaz=Depth_Set(j);
-
-        [PTF,ATF]=model_TF(source,deltaz,Pixelsize,lambda,NA);
-        PTF_3D(:,:,j)=PTF;
-        ATF_3D(:,:,j)=ATF;  
+        PTF_3D(:,:,j)=...
+        (Pupil.*sin(k_Medium.*Depth_Set(j).*(uv_vector1 - uv_s)).*G+...
+            Pupilf.*sin(k_Medium.*Depth_Set(j).*(uv_vector2 - uv_s)).*Gf)+...
+     1i*(Pupil.*cos(k_Medium.*Depth_Set(j).*(uv_vector1 - uv_s)).*G-...
+            Pupilf.*cos(k_Medium.*Depth_Set(j).*(uv_vector2 - uv_s)).*Gf);
+    
+        ATF_3D(:,:,j)=...
+        -(Pupil.*cos(k_Medium.*Depth_Set(j).*(uv_vector1 - uv_s)).*G+...
+             Pupilf.*cos(k_Medium.*Depth_Set(j).*(uv_vector2 - uv_s)).*Gf)+...
+      1i*(Pupil.*sin(k_Medium.*Depth_Set(j).*(uv_vector1 - uv_s)).*G-...
+             Pupilf.*sin(k_Medium.*Depth_Set(j).*(uv_vector2 - uv_s)).*Gf);         
+        
+        PTF_3D(:,:,j)=fftshift(PTF_3D(:,:,j));
+        ATF_3D(:,:,j)=fftshift(ATF_3D(:,:,j));
     end
-    PTF_4D(:,:,:,pic_pos)=PTF_3D;
-    ATF_4D(:,:,:,pic_pos)=ATF_3D;
-
-    source=zeros(Nx,Ny);        
+    PTF_4D(:,:,:,pic_pos)=0.5*dz*k_Wavenum^2.*PTF_3D;
+    ATF_4D(:,:,:,pic_pos)=0.5*dz*k_Wavenum^2.*ATF_3D;
 end
 
 
@@ -81,16 +105,19 @@ end
 
 %% Repeat IDT algorithm
 
-Normalized_term=(sum_PTF+Alpha).*(sum_ATF+Beta)-conj_term1.*conj_term1;
+Normalized_term=(sum_PTF+Alpha).*(sum_ATF+Beta)-conj_term1.*conj_term2;
 V_re = ((sum_ATF+Beta).* conj_PTF_Iten - conj_term1.* conj_ATF_Iten) ./ Normalized_term;
 V_im = ((sum_PTF+Alpha).* conj_ATF_Iten - conj_term2.* conj_PTF_Iten) ./ Normalized_term;
 
-toc
 disp('Performing IDT spends...');
+toc
 
 v_im = real(ifft2((V_im)));
 v_re = real(ifft2((V_re)));
-VV=-v_re+1i.*v_im;
-RI = sqrt(VV./(k.^2) + n_Medium.^2);
+
+n_re = sqrt(((n_Medium.^2 + v_re) + sqrt((n_Medium^2 + v_re).^2 + v_im.^2)) / 2);
+n_im = v_im ./ n_re ./ 2;
+
+RI=n_re+1i*n_im;
 
 

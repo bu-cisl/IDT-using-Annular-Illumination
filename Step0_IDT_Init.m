@@ -13,13 +13,12 @@ I_Calib=I_Raw(Cablib_pointX-Cablib_Nx/2:Cablib_pointX+Cablib_Nx/2-1,Cablib_point
 %Each LED geometric postion
 load('Sorted_Pos.mat');
 
-if Length_MN == 8
-    Pos_Row=Sorted_Pos(1,1:3:end);
-    Pos_Col=Sorted_Pos(2,1:3:end);
-    Sorted_Pos=zeros(2,Length_MN);
-    Sorted_Pos=[Pos_Row;Pos_Col];
-end
-    
+Pos_X=Sorted_Pos(1,1:24/Length_MN:end);
+Pos_Y=Sorted_Pos(2,1:24/Length_MN:end);
+clear Sorted_Pos
+Sorted_Pos(1,:)=Pos_X;
+Sorted_Pos(2,:)=Pos_Y;
+
 % Frequency coordinate
 Max_frequency=NA/lambda;
 delta_x = 1/(Pixelsize*Nx);      % frequency sampling X.

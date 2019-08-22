@@ -41,11 +41,11 @@ eval Step0_IDT_Init
  end
  
 %% Implete the IDT
+dz=1;
+Depth_Set=[-25:dz:25];
 
-Depth_Set=[-25:1:25];
-
-Alpha=0.5;
-Beta=0.5;
+Alpha=1e2;
+Beta=1e2;
 
 eval Step2_IDT_Poss
 

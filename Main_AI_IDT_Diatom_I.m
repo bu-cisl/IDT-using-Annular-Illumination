@@ -41,18 +41,18 @@ eval Step0_IDT_Init
  end
  
 %% Implete the IDT
+dz=1.5;
+Depth_Set=[-25.5:dz:25.5];
 
-Depth_Set=[-25.5:1.5:25.5];
-
-Alpha=0.5;
-Beta=0.5;
+Alpha=1e2;
+Beta=1e2;
 
 eval Step2_IDT_Poss
 
 %% show RI Slice
 
 figure
-for ii=1:length(Depth_Set)
+for ii=20%1:length(Depth_Set)
     subplot(121)
     imshow(imag(squeeze(RI(:,:,ii))),[]);
     subplot(122)

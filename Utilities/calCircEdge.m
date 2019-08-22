@@ -33,7 +33,7 @@ rad=radP;
 radList=rad;
 %medIList=0;
 
-r_tol=[rScan(2)*1.1 rScan(2).*0.9];
+r_tol=[rScan(2)*1.1 rScan(2).*0.5];
 
 PDindFR=1:(length(chRad)-1); %Allow any radius
 
@@ -48,9 +48,9 @@ while ~done
     radV=chRad + rad; %Radii to test
     
     %Select 20 images at random
-    if numImg>20
+    if numImg>50
         %Make sure none are the same
-        imgI=checkSame(round(rand(1,20).*(numImg-1)) + 1,numImg);
+        imgI=checkSame(round(rand(1,50).*(numImg-1)) + 1,numImg);
     else
         imgI=1:numImg;
     end
@@ -296,7 +296,7 @@ for ii=1:numImg
             adjBnd=true;
         end
 
-        if adjBndCount >= 20
+        if adjBndCount >= 50
             %Stop from endlessly iterating
             adjBnd=false;
         end
